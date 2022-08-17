@@ -1,12 +1,10 @@
 import React from 'react'
 import { Container, Paper, Chip } from '@mui/material';
-import cars from '../cars.json' // remove this
 
 const Car = (props) => {
     const id = props.match.params.id
-    {/* Change cars to props.cars and remove the cars.json import above */}
-    const car = cars.find(c => c.id == id)
-
+    const car = props.cars.find(c => c.id == id)
+    console.log("car", car);
     return (
         <Container maxWidth="sm" className="car-container">
             <Paper className="car-paper">
